@@ -25,7 +25,7 @@ exports.mycomment = (req, res) => {
     const userinfo = req.body
     const id = req.auth.id
     console.log(userinfo)
-    console.log(req.auth)
+    // console.log(req.auth)  // 解析token后得到的数据
     const sql = 'update blog_users set comment=?, comment_date=? where id = ?'
     db.query(sql, [userinfo.message, userinfo.date, id], (err, results) => {
         if(err) {

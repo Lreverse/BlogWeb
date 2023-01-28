@@ -1,91 +1,228 @@
-*{
+body{
     margin: 0;
     padding: 0;
+    background: url(../images/星云.png);
+    background-size: cover;
 }
 
+/* 头部（导航栏） */
+.header{
+    width: 100%;
+    height: 100px;
+}
+    .header .logo{
+        float: left;
+        width: 150px;
+        padding-left: 30px;
+        padding-top: 20px;
+    }
+    .header .nav{
+        float: left;
+    }
+    .header ul{
+        position: absolute;
+        display: flex;
+        right: 40px;
+    }
+    .header ul li{
+        list-style: none;
+        padding: 10px;
+        width: 70px;
+        text-align: center;
+    }
+    .header ul li a{
+        text-decoration: none;
+        font-size: 18px;
+        color: rgb(58, 18, 9);
+    }
+    /* 移动框 */
+    .header ul .slider{
+        width: 90px;
+        height: 4px;
+        background-color: rgb(44, 14, 7);
+        border-radius: 10px;
+        position: absolute;
+        left: 40px;
+        bottom: 0;
+        z-index: -1;
+        transition: all ease, 0.4s;
+    }
+    .header ul li:nth-child(1):hover ~ .slider{
+        left: 40px;
+    }
+    .header ul li:nth-child(2):hover ~ .slider{
+        left: 130px;
+    }
+    .header ul li:nth-child(3):hover ~ .slider{
+        left: 220px;
+    }
+
+/* 主页内容 */
 .title{
-    position: absolute;
+    float: left;
     margin: 0;
-    padding-top: 330px;
-    padding-left: 200px;
+    padding-top: 250px;
+    padding-left: 60px;
     font-size: 31px;
     font-style: italic;
 }
+    .title .home_text {
+        color: rgb(58, 18, 9);
+        margin: 0;
+    }
+    .title .home_text h2{
+        margin: 0;
+        padding-bottom: 5px;
+        border-bottom: 2px solid rgb(58, 18, 9);
+    }
 
+/* “关于”页面的内容 */
+.about_text{
+    float: left;
+    padding-top: 150px;
+    display: none;
+}
+    /* 内容 */
+    .about_text h2{
+        font-size: 40px;
+        /* font-family:'Courier New', Courier, monospace ; */
+        font-style: italic;
+    }
+    .about_text .mg{
+        font-size: 20px;
+        list-style:square;
+    }
+    /* 图标样式与动画 */
+    .about_text .icon ul{
+        display: flex;
+        padding-top: 150px;
+        padding: 0;
+    }
+    .about_text .icon li{
+        list-style: none;
+        margin: 0 18px;
+    }
+    .about_text .icon li a{
+        position: relative;
+        display: block;
+        color: white;
+        width: 64px;
+        height: 64px;
+        font-size: 36px;
+        text-align: center;
+        line-height: 64px;
+        border-radius: 50%;
+        transition: 0.6s;
+    }
+        .about_text .icon li a:hover{
+            text-shadow: 0 0 10px rgb(39, 137, 173);
+        }
+        .about_text .icon li a::before{
+            content: "";
+            background: transparent;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            transition: 0.6s;
+            transform: scale(0.8);
+            z-index: -1;
+        }
+        .about_text .icon li a:hover::before{
+            box-shadow: 0 0 14px 2px rgb(161, 181, 188);
+            transform: scale(1.06);
+        }
+        .about_text .icon li .svg-icon{
+            transition: 0.6s;
+            filter: invert(1);
+        }
+        .i .about_text a:hover .svg-icon{
+            filter: invert(1) drop-shadow(0 0 2px rgba(161, 181, 188));
+        }
+
+
+/* 登录注册表单 */
 .box{
+    display: none;
     position: absolute;
-    margin-top: 200px;
-    margin-left: 850px;
+    margin-top: 30px;
+    margin-left: 900px;
     border: 2px solid transparent;
     border-radius: 18px;
     padding: 13px;
     width: 300px;
-    height: 450px;
-    box-shadow: 30px 15px 40px rgb(82, 93, 186);
+    height: 550px;
+    box-shadow: 30px 15px 40px rgba(153, 76, 13, 0.785);
 }
-
-.box h1{
-    text-align: center;
-    padding: 17%;
-    font-size: 40px;
-}
-
-input{
-    width: 200px;
-    height: 40px;
-    margin: 3%;
-    border: none;
-    border-bottom: 1px solid rgb(98, 98, 114);
-    padding: 0%;
-    outline: none;
-}
-
-input::placeholder{
-    font-size: 12px;
-}
-
-label{
-    margin-left: 4%;
-    margin-right: 3%;
-    display: inline-block;
-}
-
-button{
-    width: 210px;
-    height: 36px;
-    border: 1px solid rgb(108, 109, 118);
-    border-radius: 18px;
-    margin-top: 6%;
-    margin-left: 19%;
-}
+    .box h1{
+        text-align: center;
+        color: rgb(135, 143, 146);
+        padding: 17%;
+        font-size: 40px;
+    }
+    input{
+        width: 200px;
+        height: 40px;
+        margin: 3%;
+        border: none;
+        border-bottom: 1px solid rgb(98, 98, 114);
+        padding: 0%;
+        outline: none;
+        color: rgb(161, 181, 188);
+        background: transparent;
+    }
+        input::placeholder{
+            font-size: 12px;
+        }
+    label{
+        margin-left: 4%;
+        margin-right: 3%;
+        color: rgb(161, 181, 188);
+        display: inline-block;
+    }
+    button{
+        width: 210px;
+        height: 36px;
+        border: 1px solid transparent;
+        /* border: 1px solid rgb(98, 72, 46); */
+        border-radius: 18px;
+        margin-top: 10%;
+        margin-left: 19%;
+        font-size: 15px;
+        background-color: transparent;
+        box-shadow: 20px 10px 20px rgb(153, 76, 13);
+    }
 
 
 .box a{
-    padding-left: 70%;
+    position: absolute;
+    padding-left: 220px;
+    padding-top: 30px;
     font-size: 12px;
+    font-weight: 540;
     text-decoration: none;
 }
+    .box a:link{
+        color: rgb(0, 0, 0);
+    }
 
-.box a:link{
-    color: rgb(45, 59, 118);
-}
-
-.box a:visited{
-    color:rgb(51, 8, 210);
-}
 
 .reg-box{
     display: none;
 }
+    .reg-box #repassword{
+        margin-left: 66px;
+    }
 
-.reg-box #repassword{
-    margin-left: 66px;
+.login-box button{
+    color: rgb(161, 181, 188);
 }
 
 .footer{
     top: 92%;
     width: 100%;
-    height: 10%;
-    position: fixed;
+    position: absolute;
     text-align: center;
 }

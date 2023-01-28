@@ -1,21 +1,47 @@
-
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../images/星云.png);
+    background-size: cover;
+}
 /* 头部 */
 .header{
     position: absolute;
+    display: flex;
     right: 3%;
     top: 3%;
 }
+    .header a{
+        text-decoration: none;
+        font-size: 18px;
+        color: rgb(58, 18, 9);
+        padding: 10px;
+    }
+    .header .slider_logout{
+        width: 90px;
+        height: 4px;
+        background-color: rgb(58, 18, 9);
+        border-radius: 4px;
+        position: absolute;
+        bottom: 0;
+        left: -6px;
+        z-index: -1;
+        transition: all ease, 0.4s;
+    }
+    .header a:hover ~ .slider_logout{
+        left: -8px;
+    }
 
 /* 侧边栏 */
 .sidebar_left {
-    background-color: rgb(245, 245, 246);
+    background-color: rgba(13, 24, 33, 0.781);
     position: fixed;
     left: 0;
     top: 0;
     width: 240px;
     height: 100%;
     /* border-bottom-right-radius: 15px; */
-    box-shadow: 10px 10px 40px rgb(152, 158, 216);
+    /* box-shadow: 10px 10px 40px rgb(152, 158, 216); */
 }
     .sidebar_left img {
         position: relative;
@@ -25,7 +51,7 @@
     }
     .sidebar_left ul{
         list-style-type: none;
-        padding: 0;
+        padding-left: 5px;
     }
     .sidebar_left li{
         padding: 20px;
@@ -34,7 +60,7 @@
     .sidebar_left .slider{
         width: 6px;
         height: 60px;
-        background-color: rgb(96, 104, 178);
+        background-color: rgb(153, 76, 13);
         border-radius: 4px;
         position: fixed;
         top: 154px;
@@ -51,47 +77,65 @@
     .sidebar_left li:nth-child(3):hover ~ .slider{
         top: 274px;
     }
+    .sidebar_left li:nth-child(4):hover ~ .slider{
+        top: 334px;
+    }
+    .sidebar_left a{
+        color: rgb(192, 194, 198);
+        text-decoration: none;
+    }
+        .sidebar_left a:hover{
+                color: rgb(238, 237, 240);
+            }
 
 /* 主体内容 */
 .content_right{
     padding: 60px;
     padding-left: 300px;
 }
+    .content_right h1{
+        font-style: italic;
+        font-size: 40px;
+    }
     /* 评论表单 */
     #form_comment #message{
+        background-color: rgb(165, 153, 137);
         border-radius: 8px;
         border: 1px;
-        box-shadow: 10px 10px 20px rgb(181, 188, 251);
+        box-shadow: 10px 10px 20px rgb(153, 76, 13);
     }
     #form_comment #date{
         padding-left: 5px;
+        background-color: rgb(165, 153, 137);
+        border-radius: 6px;
     }
     #form_comment button{
-        width: 240px;
+        width: 200px;
         height: 50px;
+        background-color: transparent;
         border-radius: 18px;
-        border: 1px rgb(108, 109, 118);
+        border: 1px solid rgb(45, 45, 48);
         font-size: 15px;
         font-weight: 300;
-        box-shadow: 3px 3px 5px rgb(181, 188, 251);
+        box-shadow: 3px 3px 5px rgb(153, 76, 13);
+        font-size: 18px;
+        color: rgb(214, 128, 58);
     }
     #form_comment label{
         font-size: 15px;
-        color: rgb(18, 29, 67);
+        font-weight: 600;
+        font-style: italic;
+        color: rgb(150, 149, 143);
     }
 
 /* 底部 */
 .footer{
     position: relative;
     top: 95%;
+    padding: 30px;
     padding-left: 700px;
+    color: rgb(192, 190, 195);
 }
 
-/* 链接 */
-a{
-    color: rgb(18, 29, 67);
-    text-decoration: none;
-}
-    a:hover{
-        color: rgb(64, 26, 177);
-    }
+
+

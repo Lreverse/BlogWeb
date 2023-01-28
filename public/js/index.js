@@ -1,18 +1,45 @@
 $(function() {
+
+    // 点击'home'
+    $('.home').on('click', function(){
+        $('.about_text').slideUp(1500, function(){
+            $('.title').slideDown(1500)
+            $('.box').slideUp(1500)
+        })
+        
+    })
+    // 点击'about'
+    $('.about').on('click', function(){
+        $('.box').slideUp(1500)
+        $('.title').slideUp(1500, function(){
+            $('.about_text').slideDown(1500)
+        })
+        
+    })
+    // 点击'login'
+    $('.login').on('click', function(){
+        $('.title').slideUp(1500)
+        $('.box').slideDown(1500)
+        $('.about_text').slideUp(1500)
+    })
+
+
     // 标题
     $('.title').hide()
-    $('.title').fadeToggle(2000)
+    $('.title').slideToggle(2000)
 
     // 点击“去注册”的链接
     $('#link_reg').on('click', function(){
-        $('.login-box').hide()
-        $('.reg-box').show()
+        $('.login-box').fadeToggle(500, function(){
+            $('.reg-box').fadeToggle(500)
+        })
     })
 
     // 点击“去登录”的链接
     $('#link_login').on('click', function(){
-        $('.login-box').show()
-        $('.reg-box').hide()
+        $('.reg-box').fadeToggle(500, function(){
+            $('.login-box').fadeToggle(500)
+        })
     })
 
 
@@ -29,7 +56,7 @@ $(function() {
         };
         // 检验
         if(!patt_name.test(user.username)) {
-            return alert('用户名长度为4~18位字符')
+            return alert('用户名为长度4~18位的字符')
         }
         else if(!patt1.test(user.pwd)) {e
             return alert('密码为长度6~20位的字母、数字或下划线')
@@ -75,33 +102,11 @@ $(function() {
                     console.log('登录成功，进入首页！')
                     window.localStorage.setItem('token', res.token)
                     window.location.href = '/my/homepage'
-                    // window.location.href = '/my/homepage';
-                //     $.ajax({
-                //         url:'/my/homepage',
-                //         type:'GET',
-                //         headers: {
-                //             Authorization: localStorage.getItem('token') || '',
-                //         },
-                //         success: function(res){
-                //             console.log('进入博客主页！')
-                //         }
-                //     })
                 }
             }
         })
     })
-
-    // $.ajax({
-    //     url:'/my/homepage',
-    //     type:'GET',
-    //     headers: {
-    //         Authorization: localStorage.getItem('token') || '',
-    //     },
-    //     success: function(res){
-    //         console.log('进入博客主页！')
-    //     }
-    // })
-
+    
 })
 
 

@@ -13,14 +13,12 @@ $.ajaxPrefilter(function (options) {
   
     // 全局挂载 complete 回调函数
     options.complete = function (res) {
-      // 在 complete 回调函数中，可以使用 res.responseJSON 拿到服务器响应回来的数据
       console.log(res)
+      // res.responseJSON为服务器响应回来的数据
       if (res.responseJSON.status === 1) {
         if (res.responseJSON.msg === '身份认证失败！') {
-          // 1. 强制清空 token
-          window.localStorage.removeItem('token');
-          // 2. 强制跳转到登录页面
-          window.location.href = '/api';
+          window.localStorage.removeItem('token'); // 清空token
+          window.location.href = '/api';  // 跳转回登录页面
         }
         else if(res.responseJSON.msg === '登录失败！' || res.responseJSON.msg === '用户不存在！') {
           window.localStorage.removeItem('token');
