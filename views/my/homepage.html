@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/homepage.css">
+    <title>homepage</title>
+</head>
+<body>
+    <div>
+        <div class="header">
+            <a id="logout" href="javascript:;">退出</a>
+        </div>
+        
+        <div class="sidebar_left">
+            <img class="head portrait" src="../../public/images/兔兔.png" alt="头像">
+            <ul>
+                <li><a href="#profile">个人资料</a></li>
+                <li><a href="#article">文章</a></li>
+                <li><a href="#comment">留言</a></li>
+                <div class="slider"></div>
+            </ul>
+        </div>
+
+        <div class="content_right">
+            <h1>Welcome to my blog!</h1>
+            <br>
+
+            <section class="profile" id="profile">
+                <h2>Profile</h2><hr>
+                <ul>
+                    <li>name</li>
+                    <li>nation</li>
+                    <li>Date of birth</li>
+                    <li>Education</li>
+                    <li>introduction</li>
+                </ul>
+            </section>
+            <br>
+
+            <section class="article" id="article">
+                <h2>Article</h2><hr>
+                    <h3>1. JavaScript</h3>
+                    <p>JavaScript（简称“JS”）是当前最流行、应用最广泛的客户端脚本语言，用来在网页中添加一些动态效果与交互功能，在 Web 开发领域有着举足轻重的地位。JavaScript 与 HTML 和 CSS 共同构成了我们所看到的网页，其中：
+                        <li>HTML 用来定义网页的内容，例如标题、正文、图像等；</li>
+                        <li>CSS 用来控制网页的外观，例如颜色、字体、背景等；</li>
+                        <li>JavaScript 用来实时更新网页中的内容，例如从服务器获取数据并更新到网页中，修改某些标签的样式或其中的内容等，可以让网页更加生动。</li>
+                    </p>
+                    <h3>2. Node.js</h3>
+                    <p>Node.js 是一个开源和跨平台的 JavaScript 运行时环境。 它几乎是任何类型项目的流行工具！
+                        <br>
+                        Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。
+                        <br>
+                        Node.js 应用程序在单个进程中运行，无需为每个请求创建新的线程。 Node.js 在其标准库中提供了一组异步的 I/O 原语，以防止 JavaScript 代码阻塞，通常，Node.js 中的库是使用非阻塞范式编写的，使得阻塞行为成为异常而不是常态。
+                        <br>
+                        当 Node.js 执行 I/O 操作时（比如从网络读取、访问数据库或文件系统），Node.js 将在响应返回时恢复操作（而不是阻塞线程和浪费 CPU 周期等待）。
+                        <br>
+                        这允许 Node.js 使用单个服务器处理数千个并发连接，而​​不会引入管理线程并发（这可能是错误的重要来源）的负担。
+                        <br>
+                        Node.js 具有独特的优势，因为数百万为浏览器编写 JavaScript 的前端开发者现在无需学习完全不同的语言，就可以编写除客户端代码之外的服务器端代码。
+                        <br>
+                        在 Node.js 中，可以毫无问题地使用新的 ECMAScript 标准，因为你不必等待所有用户更新他们的浏览器，你负责通过更改 Node.js 版本来决定使用哪个 ECMAScript 版本，你还可以通过运行带有标志的 Node.js 来启用特定的实验性功能。</p>
+                    <h3>3. snort</h3>
+                    <p>Snort是一个强大的轻量级网络入侵检测系统，它能够检测到各种不同的攻击方式，对攻击进行实时报警。此外，Snort具有很好的扩展性和可移植性，并且这个软件遵循GPL，这意味着只要遵守GPL的任何组织和个人均可以自由使用这个软件。
+                    <br>
+                    Snort具有实时流量分析和日志IP网络数据包的能力，能够快速地检测网络攻击，及时地发出报警。Snort的报警机制很丰富，例如：Syslog、用户指定的文件、一个Unix套接字，还有使用samba协议向Windows客户端发出WinPoup消息。利用XML插件，Snort可以使用SNML把日志存放到一个文件或者实时报警。Snort能够进行协议分析、内容的搜索/匹配。目前Snort能够分析的协议有TCP、UDP、ICMP，将来可能支持ARP、OSPF、IPX、RIP等协议，它能够检测多种方式的攻击和探测，例如：缓冲区溢出、CGI攻击、端口暴力破解、SMB探测以及web应用程序的攻击现在也已经有简单规则的支持。Snort自带的检测攻击的规则数量有限，但Snort支持用户自定义规则的加载，这对有能力的大型企业而言是个不错的IDS选择。</p>
+                
+            </section>
+            <br>
+
+            <section class="comment" id="comment">
+                <h2>Comment</h2><hr>
+                <form id="form_comment">
+                    <label for="message">Message</label><br><br>
+                    <textarea name="message" id="message" cols="100" rows="10" required></textarea>
+                    <br><br>
+                    <label for="date">date</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="date" name="date" type="date" required>
+                    <br><br>
+                    <button type="submit">submit</button>
+                </form>
+            </section>
+        </div>
+
+        <div class="footer">
+            @信息安全实践-2022-LYP
+        </div>
+    </div>
+
+    <script src="../../public/js/jquery.js"></script>
+    <script src="../../public/js/homepage.js"></script>
+    <script src="../../public/js/baseAPI.js"></script>
+</body>
+</html>
